@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5ZU-Hh-f9Y" customClass="ColorsSectionHeader" customModule="OfficeUIFabriciOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDG-X0-Evh">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colors Section Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsl-x2-Uo6">
+                    <rect key="frame" x="16" y="0.0" width="468" height="40"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Lsl-x2-Uo6" firstAttribute="top" secondItem="5ZU-Hh-f9Y" secondAttribute="top" id="QtB-Xi-23f"/>
+                <constraint firstAttribute="bottom" secondItem="Lsl-x2-Uo6" secondAttribute="bottom" id="YWQ-un-1Fk"/>
+                <constraint firstAttribute="bottom" secondItem="bDG-X0-Evh" secondAttribute="bottom" id="Z2K-Q7-CTu"/>
+                <constraint firstItem="bDG-X0-Evh" firstAttribute="top" secondItem="5ZU-Hh-f9Y" secondAttribute="top" id="ZRB-qG-QoA"/>
+                <constraint firstAttribute="trailing" secondItem="Lsl-x2-Uo6" secondAttribute="trailing" constant="16" id="nN2-0l-eBr"/>
+                <constraint firstItem="Lsl-x2-Uo6" firstAttribute="leading" secondItem="5ZU-Hh-f9Y" secondAttribute="leading" constant="16" id="oLj-Ho-Yn3"/>
+                <constraint firstAttribute="trailing" secondItem="bDG-X0-Evh" secondAttribute="trailing" id="qAF-jb-3Da"/>
+                <constraint firstItem="bDG-X0-Evh" firstAttribute="leading" secondItem="5ZU-Hh-f9Y" secondAttribute="leading" id="rx4-f5-vRf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="bDG-X0-Evh" id="mZV-6j-jWF"/>
+                <outlet property="sectionTitle" destination="Lsl-x2-Uo6" id="ohB-3o-ppX"/>
+            </connections>
+            <point key="canvasLocation" x="290" y="351"/>
+        </view>
+    </objects>
+</document>

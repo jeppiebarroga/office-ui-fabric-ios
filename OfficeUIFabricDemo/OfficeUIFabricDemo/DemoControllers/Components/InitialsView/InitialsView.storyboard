@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0ku-Mw-Vto">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--OfficeUI Fabric InitialsView-->
+        <scene sceneID="fi9-be-hP1">
+            <objects>
+                <tableViewController title="OfficeUI Fabric InitialsView" id="0ku-Mw-Vto" customClass="InitialsViewTableViewController" customModule="OfficeUIFabricDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="uKc-a7-gnX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InitialsViewItemCell" id="z7N-5H-y0X" customClass="InitialsViewItemCell" customModule="OfficeUIFabricDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z7N-5H-y0X" id="D7z-YB-rUC">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-Mj-eay" customClass="InitialsView" customModule="OfficeUIFabricCore">
+                                            <rect key="frame" x="8" y="4" width="56" height="56"/>
+                                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="GgV-Mj-eay" secondAttribute="height" multiplier="1:1" id="XQY-yt-VLB"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initials Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09L-qS-M5D">
+                                            <rect key="frame" x="72" y="4" width="520" height="56"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.3529411764705882" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GgV-Mj-eay" firstAttribute="leading" secondItem="D7z-YB-rUC" secondAttribute="leading" constant="8" id="EDE-fr-aq9"/>
+                                        <constraint firstItem="09L-qS-M5D" firstAttribute="bottom" secondItem="GgV-Mj-eay" secondAttribute="bottom" id="EpX-Xs-bDd"/>
+                                        <constraint firstAttribute="trailing" secondItem="09L-qS-M5D" secondAttribute="trailing" constant="8" id="OHk-29-LvJ"/>
+                                        <constraint firstItem="GgV-Mj-eay" firstAttribute="centerY" secondItem="D7z-YB-rUC" secondAttribute="centerY" id="ZS4-69-Jwe"/>
+                                        <constraint firstItem="GgV-Mj-eay" firstAttribute="top" secondItem="D7z-YB-rUC" secondAttribute="top" constant="4" id="k7j-P9-qUX"/>
+                                        <constraint firstItem="09L-qS-M5D" firstAttribute="top" secondItem="GgV-Mj-eay" secondAttribute="top" id="nqF-d5-AR8"/>
+                                        <constraint firstItem="09L-qS-M5D" firstAttribute="leading" secondItem="GgV-Mj-eay" secondAttribute="trailing" constant="8" id="odf-yx-mwi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="initialsView" destination="GgV-Mj-eay" id="iJD-si-WWT"/>
+                                    <outlet property="titleLabel" destination="09L-qS-M5D" id="XTk-ZE-5Fn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0ku-Mw-Vto" id="2pa-Ju-fWt"/>
+                            <outlet property="delegate" destination="0ku-Mw-Vto" id="K9v-LW-zAC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGP-MY-Cgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="317"/>
+        </scene>
+    </scenes>
+</document>

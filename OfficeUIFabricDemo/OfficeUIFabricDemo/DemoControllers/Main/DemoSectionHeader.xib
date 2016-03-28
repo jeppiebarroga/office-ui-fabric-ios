@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Mwa-r4-CON" customClass="DemoSectionHeader" customModule="OfficeUIFabriciOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTw-fr-mBZ">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+                    <color key="backgroundColor" red="0.78039215689999997" green="0.87843137250000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Section" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQx-Y9-f0M">
+                    <rect key="frame" x="16" y="0.0" width="468" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.27058823529411763" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fQx-Y9-f0M" firstAttribute="leading" secondItem="Mwa-r4-CON" secondAttribute="leading" constant="16" id="80H-hU-x2E"/>
+                <constraint firstAttribute="bottom" secondItem="fQx-Y9-f0M" secondAttribute="bottom" id="Ald-Mf-l9x"/>
+                <constraint firstItem="zTw-fr-mBZ" firstAttribute="leading" secondItem="Mwa-r4-CON" secondAttribute="leading" id="Duw-dx-j3c"/>
+                <constraint firstAttribute="trailing" secondItem="fQx-Y9-f0M" secondAttribute="trailing" constant="16" id="EiR-xR-zf5"/>
+                <constraint firstAttribute="trailing" secondItem="zTw-fr-mBZ" secondAttribute="trailing" id="cHh-aO-el8"/>
+                <constraint firstAttribute="bottom" secondItem="zTw-fr-mBZ" secondAttribute="bottom" id="fnU-qR-KhT"/>
+                <constraint firstItem="fQx-Y9-f0M" firstAttribute="top" secondItem="Mwa-r4-CON" secondAttribute="top" id="s6Y-gA-FdM"/>
+                <constraint firstItem="zTw-fr-mBZ" firstAttribute="top" secondItem="Mwa-r4-CON" secondAttribute="top" id="zhL-Lx-8go"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="sectionTitle" destination="fQx-Y9-f0M" id="plz-yk-I8d"/>
+            </connections>
+            <point key="canvasLocation" x="284" y="122"/>
+        </view>
+    </objects>
+</document>

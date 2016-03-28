@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xKi-un-J9p">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--OfficeUI Fabric LogoView-->
+        <scene sceneID="sXH-56-YX0">
+            <objects>
+                <tableViewController title="OfficeUI Fabric LogoView" id="xKi-un-J9p" customClass="LogoViewTableViewController" customModule="OfficeUIFabricDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="thz-FK-e8B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LogoViewItemCell" id="hcO-Dm-Ro7" customClass="LogoViewItemCell" customModule="OfficeUIFabricDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hcO-Dm-Ro7" id="ViE-6c-Eyz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-BX-xgO" customClass="LogoView" customModule="OfficeUIFabricCore">
+                                            <rect key="frame" x="8" y="4" width="56" height="56"/>
+                                            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Jad-BX-xgO" secondAttribute="height" multiplier="1:1" id="M3I-8s-HAX"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initials Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8Q-1S-hR3">
+                                            <rect key="frame" x="72" y="4" width="520" height="56"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="E8Q-1S-hR3" firstAttribute="leading" secondItem="Jad-BX-xgO" secondAttribute="trailing" constant="8" id="LtW-TK-uNj"/>
+                                        <constraint firstAttribute="trailing" secondItem="E8Q-1S-hR3" secondAttribute="trailing" constant="8" id="MgH-8U-ZXN"/>
+                                        <constraint firstItem="E8Q-1S-hR3" firstAttribute="top" secondItem="Jad-BX-xgO" secondAttribute="top" id="a9j-D3-h3m"/>
+                                        <constraint firstItem="Jad-BX-xgO" firstAttribute="top" secondItem="ViE-6c-Eyz" secondAttribute="top" constant="4" id="fEw-xa-cXB"/>
+                                        <constraint firstItem="Jad-BX-xgO" firstAttribute="leading" secondItem="ViE-6c-Eyz" secondAttribute="leading" constant="8" id="pGt-Wu-Nx1"/>
+                                        <constraint firstItem="E8Q-1S-hR3" firstAttribute="bottom" secondItem="Jad-BX-xgO" secondAttribute="bottom" id="u9n-13-ejK"/>
+                                        <constraint firstItem="Jad-BX-xgO" firstAttribute="centerY" secondItem="ViE-6c-Eyz" secondAttribute="centerY" id="um2-BR-6Gu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="logoView" destination="Jad-BX-xgO" id="HVD-Mx-620"/>
+                                    <outlet property="titleLabel" destination="E8Q-1S-hR3" id="0HY-dL-HgV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xKi-un-J9p" id="CvR-3d-GHa"/>
+                            <outlet property="delegate" destination="xKi-un-J9p" id="l8T-vr-sxP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TtH-lL-FVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="335"/>
+        </scene>
+    </scenes>
+</document>
