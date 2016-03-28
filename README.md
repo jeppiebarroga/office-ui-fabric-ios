@@ -81,7 +81,7 @@ You can use `UIButtonMSExtension` to customize your `UIButton`s:
 self.myButton.msStandardButton()
 self.myOtherButton.msPrimaryButton()
 ```
-![UIButton Example Image]()
+![UIButton Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/ButtonExample.png)
 
 To customize button color you can pass parameters to `msStandardButton` or `msPrimaryButton`:
 ```swift
@@ -113,7 +113,7 @@ self.myColorLabel.msLabel(textColor: UIColor.msThemeSecondary())
 
 self.myColorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSecondary())
 ```
-![UILabel Example Image]()
+![UILabel Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LabelExample.png)
 
 ##Components##
 
@@ -121,7 +121,7 @@ self.myColorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSeconda
 
 InitialsView component is used to create colored box with initials from string, uses `UIColor.msHashColor(title)` to set background color.
 
-![InitialsView Example Image]()
+![InitialsView Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/InitialsViewExample.png)
 
 Code:
 
@@ -134,7 +134,7 @@ self.initialsView.setInitialsFromTitle(title)
 
 LogoView component is used to create colored box with initials or image. Contains `InitialsView`, `UIImageView`, and logic to show both of them based on input. It can be used in a list where not every item has an image such as an Address book.
 
-![LogoView Example Image]()
+![LogoView Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LogoViewExample.png)
 
 Code:
 
