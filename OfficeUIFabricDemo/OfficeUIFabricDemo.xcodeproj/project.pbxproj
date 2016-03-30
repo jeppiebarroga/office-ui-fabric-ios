@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A63554A81CA5E88C00B33AF2 /* LabelDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63554A71CA5E88C00B33AF2 /* LabelDemoViewController.swift */; };
+		A63554AA1CA9A1D300B33AF2 /* TextFieldDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63554A91CA9A1D300B33AF2 /* TextFieldDemoViewController.swift */; };
 		A6371FB01C6279AE0086CB29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6371FAF1C6279AE0086CB29 /* AppDelegate.swift */; };
 		A6371FB51C6279AE0086CB29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6371FB31C6279AE0086CB29 /* Main.storyboard */; };
 		A6371FB71C6279AE0086CB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6371FB61C6279AE0086CB29 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		A63554A71CA5E88C00B33AF2 /* LabelDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelDemoViewController.swift; sourceTree = "<group>"; };
+		A63554A91CA9A1D300B33AF2 /* TextFieldDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDemoViewController.swift; sourceTree = "<group>"; };
 		A6371FAC1C6279AE0086CB29 /* OfficeUIFabricDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeUIFabricDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6371FAF1C6279AE0086CB29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6371FB41C6279AE0086CB29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				A6AEDB301C8F7B89000A62E8 /* ButtonDemoViewController.swift */,
 				A63554A71CA5E88C00B33AF2 /* LabelDemoViewController.swift */,
+				A63554A91CA9A1D300B33AF2 /* TextFieldDemoViewController.swift */,
 			);
 			path = Customization;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				A6371FD51C627AB80086CB29 /* ColorsDataSource.swift in Sources */,
 				A6371FD41C627AB80086CB29 /* ColorPaletteTableViewController.swift in Sources */,
 				A6371FD91C627AB80086CB29 /* FontsTableViewController.swift in Sources */,
+				A63554AA1CA9A1D300B33AF2 /* TextFieldDemoViewController.swift in Sources */,
 				A63554A81CA5E88C00B33AF2 /* LabelDemoViewController.swift in Sources */,
 				A6371FDC1C627AB80086CB29 /* DemoSectionHeader.swift in Sources */,
 				A6371FDB1C627AB80086CB29 /* DemoItemCell.swift in Sources */,
