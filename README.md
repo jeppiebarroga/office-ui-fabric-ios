@@ -1,96 +1,106 @@
 #[Office UI Fabric iOS Core](http://dev.office.com/fabric)
 
-#####The UI iOS framework for building experiences for Office and Office 365.
+#####The iOS UI framework for building experiences for Office and Office 365.
 
-Fabric for iOS is a library that provides the Office/Office 365 experience for the native iOS platform. It contains tokens like [Colors](#colors) and [Typography](#typography) as well as customization for native controls like the [UIButton](#uibutton) and [UILabel](#uilabel) (with more coming soon) all from the official design language used in Office and Office 365 products.
+Fabric for iOS is a library that provides the Office UI experience for the native iOS platform. It contains tokens like [Colors](#colors) and [Typography](#typography), as well as customization for native controls like the [UIButton](#uibutton) and [UILabel](#uilabel) (with more coming soon), all from the official design language used in Office and Office 365 products.
 
-##Installation##
+##Install and use Office UI Fabric
+To install Office UI Fabric:
 
-###Manual installation###
+1. Download the latest changes from the [Office UI Fabric iOS](https://github.com/OfficeDev/Office-UI-Fabric-iOS) repository.
 
-1. Download the latest changes from the [Office UI Fabric iOS Repository](https://github.com/OfficeDev/Office-UI-Fabric-iOS).
+2. Move the `OfficeUIFabricCore` folder into your project folder.
 
-2. Move `OfficeUIFabricCore` folder into your project folder.
+3. Drag and drop `OfficeUIFabricCore/OfficeUIFabricCore.xcodeproj` into your xcode project.
 
-3. Drag'n'drop `OfficeUIFabricCore/OfficeUIFabricCore.xcodeproj` into your xcode project.
+4. Select in Xcode **your project** -> **your target** -> **General** -> **Embedded Binaries** -> **add "OfficeUIFabricCore.framework"**.
 
-4. Select in Xcode your project -> your target -> General -> Embedded Binaries -> add "OfficeUIFabricCore.framework"
+Import the library to use it:
 
-##Usage##
-
-**!** *Don't forget to 'import' the library to use it:*
 ```swift
 import OfficeUIFabricCore
 ```
 
-##Tokens##
+##Tokens
 
-###Colors###
+###Colors
 
-You can use UIColor extension to access colors from the Office color palette:
+You can use the `UIColor` extension to access colors from the Office color palette:
+
 ```swift
 UIColor.msThemePrimary()
 UIColor.msNeutralSecondaryAlt()
 UIColor.msAccentBlueLight()
-```
-The full list of colors can be found here: [Full list of Fabric's Office/Office 365 Colors](http://dev.office.com/fabric/styles#color).
 
-When you have a list of items where not all of them have images (for example Address book contacts, Music bands list, etc.) - you can use Hash colors algorithm to generate some "random" color:
+```
+
+For the full list of colors, see the [Styles page](http://dev.office.com/fabric/styles#color) on the Fabric website.
+
+When you have a list of items that don't all have images (for example, address book contacts or a list of music bands), you can use the `HashColor` algorithm to generate random colors:
+
 ```swift
 UIColor.msHashColor("Karen Pruitt")
 UIColor.msHashColor("Norris Beardsley")
 UIColor.msHashColor("Proseware, Inc.")
 ```
 
-###Typography###
+###Typography
 
-Fabric uses several font styles: [Full list of Office 365 Typography styles](http://dev.office.com/fabric/styles#typography).
+Fabric uses several font styles. You can see the full list on the [Typography styles](http://dev.office.com/fabric/styles#typography) page of the Fabric website.
+
 Fabric iOS uses [Apple's SanFrancisco font](https://developer.apple.com/fonts/).
 
-Use UIFont extension to get fonts for different styles:
+Use the `UIFont` extension to get fonts for different styles:
+
 ```swift
 UIFont.msFont(style: MSFontStyle.SU)
 UIFont.msFont(style: MSFontStyle.XXL)
 UIFont.msFont(style: MSFontStyle.SPlus)
 ```
-It will return font with the preferred font weight. For cases when you need different font weights use:
+
+The font returned will be the preferred font weight. You can also specify a different font weight:
+
 ```swift
 UIFont.msFont(style: MSFontStyle.XL, weight: MSFontWeight.Light)
 UIFont.msFont(style: MSFontStyle.MPlus, weight: MSFontWeight.Semibold)
 UIFont.msFont(style: MSFontStyle.L, weight: MSFontWeight.Thin)
 ```
-**!** *Note that font weight works only for iOS 8.2+, for iOS < 8.2 Regular weight will be used.*
+>Note: The font weight works only for iOS 8.2 and later. For earlier versions of iOS, the font will be regular weight.
 
-###Icons Guidelines###
+###Icons
 
-To be consistent with other design tokens you can use recommended sizes with specific line weights:
+To be consistent with other design tokens, you can use recommended icon sizes with specific line weights:
+
 ```
 TabBar Icons: 30x30pt, line weight: 1
 Toolbar Icons: 28x28pt, line weight: 1
 NavigationBar Icons: 20x20pt, line weight: 1
 ```
 
-We recommend to use outline icons instead of solid. However, you can still use solid icons for showing different states of an icon (such as following / not following).
+In general, we recommend that you use outline icons rather than solid icons. Use solid icons for different icon states (such as following/not following).
 
-##Native Controls Customization##
+##Native control customization
 
-###UIButton###
+###UIButton
 
-You can use `UIButtonMSExtension` to customize your `UIButton`s:
+You can use the `UIButtonMS` extension to customize your UI buttons:
 
 ```swift
 self.myButton.msStandardButton()
 self.myOtherButton.msPrimaryButton()
 ```
-![UIButton Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/ButtonExample.png)
 
-To customize the button color you can pass parameters to `msStandardButton` or `msPrimaryButton`:
+![Image showing three standard and three primary UIButton colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/ButtonExample.png)
+
+To customize the button color, you can pass parameters to `msStandardButton` or `msPrimaryButton`:
+
 ```swift
 self.standardButton.msStandardButton(UIColor.msAccentTeal(), disabledColor: UIColor.msAccentTealLight())
 
 self.primaryButton.msPrimaryButton(UIColor.msAccentTeal(), selectedColor: UIColor.msAccentTealDark(), disabledColor: UIColor.msAccentTealLight())
 ```
-You can also apply font and/or image to your button in a standard way:
+You can also apply a font and/or an image to your button in a standard way:
+
 ```swift
 self.toggleIconButton.titleLabel?.font = UIFont.msFont(MSFontStyle.L)
 
@@ -99,9 +109,9 @@ self.toggleIconButton.setImage(UIImage(named: "MyToggleImage"), forState: .Norma
 self.toggleIconButton.setImage(UIImage(named: "MyToggleImageSelected"), forState: .Selected)
 ```
 
-###UILabel###
+###UILabel
 
-You can use `UILabelMSExtension` to customize your `UILabel`s:
+You can use the `UILabelMS` extension to customize your UI labels:
 
 ```swift
 self.myLabel.msLabel(MSFontStyle.XL, fontWeight: MSFontWeight.SemiLight, textColor: UIColor.msThemePrimary())
@@ -114,48 +124,50 @@ self.myColorLabel.msLabel(textColor: UIColor.msThemeSecondary())
 
 self.myColorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSecondary())
 ```
-![UILabel Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LabelExample.png)
 
-##Components##
+![Image showing large, medium, and small UI labels in several colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LabelExample.png)
 
-###InitialsView###
+##Components
 
-InitialsView component is used to create colored box with initials from string, uses `UIColor.msHashColor(title)` to set background color.
+###InitialsView
 
-![InitialsView Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/InitialsViewExample.png)
-
-Code:
+Use the InitialsView component to create a colored box with initials from a string:
 
 ```
 self.initialsView.setInitialsFromTitle(title)
 ```
 
+Use `UIColor.msHashColor(title)` to set the background color.
 
-###LogoView###
+![Image that shows two InitialsView components with initials from the string in different colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/InitialsViewExample.png)
 
-LogoView component is used to create colored box with initials or image. Contains `InitialsView`, `UIImageView`, and logic to show both of them based on input. It can be used in a list where not every item has an image such as an Address book.
+###LogoView
 
-![LogoView Example Image](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LogoViewExample.png)
+Use the LogoView component to create a colored box with initials or an image. This component contains `InitialsView`, `UIImageView`, and logic to show both of them based on input. Use this component when you have a list of items that don't all have images such as an address book.
 
-Code:
 
 ```
 self.logoView.updateWithTitle(title)
 ```
+
 or
+
 ```
 self.logoView.updateWithImage(image)
 ```
 
+![Image that shows a LogoView component with an InitialsView and a UIImageView](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LogoViewExample.png)
+
+
 ##Contribute to Fabric
 
-Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-iOS/issues).
+Post bug reports, feature requests, and questions on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-iOS/issues).
 
 
 ##Licenses
 
-All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project.
+All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the [License](license.md) file at the root of the project.
 
 
 ##Changelog
-We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, including the changelog between every release. View a complete list of additions, fixes, and changes since 1.0 on the [Releases page](https://github.com/OfficeDev/Office-UI-Fabric-iOS/releases).
+We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, including the changelog between every release. You'll find a complete list of additions, fixes, and changes since the 1.0 release on the [Releases page](https://github.com/OfficeDev/Office-UI-Fabric-iOS/releases).
