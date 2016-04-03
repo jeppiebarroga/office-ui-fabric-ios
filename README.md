@@ -166,7 +166,7 @@ Post bug reports, feature requests, and questions on the [issue tracker](https:/
 
 ##Licenses
 
-All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the [License](license.md) file at the root of the project.
+All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project.
 
 
 ##Changelog
