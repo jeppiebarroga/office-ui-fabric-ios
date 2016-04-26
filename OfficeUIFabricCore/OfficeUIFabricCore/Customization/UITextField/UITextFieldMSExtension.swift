@@ -58,7 +58,7 @@ extension UITextField {
     
     public func msTextFieldPermanentPlaceholderText(text: String, placeholderColor: UIColor = UIColor.msNeutralSecondary(), font: UIFont? = nil, padding: CGFloat = MSTextFieldConstants.DefaultPadding * 2) {
         let placeholderLabel = UILabel()
-        if let font = (font != nil ? font : self.font) {
+        if let font = font ?? self.font {
             placeholderLabel.font = font
         }
         placeholderLabel.textColor = placeholderColor
