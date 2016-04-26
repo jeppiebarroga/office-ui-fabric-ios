@@ -4,7 +4,7 @@ import UIKit
 
 extension String {
     internal func words() -> [String] {
-        let range = Range<String.Index>(start: self.startIndex, end: self.endIndex)
+        let range = self.startIndex ..< self.endIndex
         var words = [String]()
         
         self.enumerateSubstringsInRange(range, options: .ByWords) { (word, _, _, _) -> () in
