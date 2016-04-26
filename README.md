@@ -127,6 +127,63 @@ self.myColorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSeconda
 
 ![Image showing large, medium, and small UI labels in several colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LabelExample.png)
 
+###UITextField
+
+You can use `UITextFieldMSExtension` to customize `UITextField`s in your project.
+
+![Image showing customized text fields with box and underline styles](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/TextFieldExample.png)
+
+`UITextField` customization consist of three components:
+
+* TextField Form
+* Text Style
+* Placeholder Text Style
+
+####1. Define the form:
+
+You can use `Box` or `Underline` style for your text field:
+```swift
+self.myTextField.msTextFieldBox()
+
+self.myTextField.msTextFieldBox(borderColor: UIColor, backgroundColor: UIColor, leftPadding: CGFloat)
+```
+or
+```swift
+self.myTextField.msTextFieldUnderline()
+
+self.myTextField.msTextFieldUnderline(borderColor: UIColor, backgroundColor: UIColor, leftPadding: CGFloat)
+```
+
+####2. Text Style:
+
+To apply text style to your `UITextField`:
+
+```swift
+self.myTextField.msTextFieldFontStyles()
+
+self.myTextField.msTextFieldFontStyles(style: MSFontStyle, textColor: UIColor)
+
+self.myTextField.msTextFieldFontStyles(style: MSFontStyle, fontWeight: MSFontWeight, textColor: UIColor)
+
+self.myTextField.msTextFieldFontStyles(font: UIFont?, textColor: UIColor)
+```
+
+####3. Placeholder Text Style:
+
+You can use either "Placeholder text" in your `UITextField` or permanent "placeholder":
+
+```swift
+// Placeholder text
+self.myTextField.msTextFieldPlaceholderText(text: String)
+
+self.myTextField.msTextFieldPlaceholderText(text: String, placeholderColor: UIColor, font: UIFont?)
+
+// Permanent placeholder
+self.myTextField.msTextFieldPermanentPlaceholderText(text: String)
+
+self.myTextField.msTextFieldPermanentPlaceholderText(text: String, placeholderColor: UIColor, font: UIFont?, padding: CGFloat)
+```
+
 ##Components
 
 ###InitialsView

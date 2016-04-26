@@ -36,7 +36,8 @@ class MainTableViewController: UITableViewController {
         ]),
         DemoLinkSectionItem(title: "Customization", demos: [
             DemoLinkItem(title: "UIButton", segueId: "ShowButtonSegueId"),
-            DemoLinkItem(title: "UILabel", segueId: "ShowLabelSegueId")
+            DemoLinkItem(title: "UILabel", segueId: "ShowLabelSegueId"),
+            DemoLinkItem(title: "UITextField", segueId: "ShowTextFieldSegueId")
         ]),
         DemoLinkSectionItem(title: "Components: Common", demos: [
             DemoLinkItem(title: "InitialsView", segueId: "ShowInitialsViewSegueId"),
