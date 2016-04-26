@@ -4,7 +4,7 @@ import UIKit
 
 extension UIColor {
     public class func msHashColor(hash: String) -> UIColor {
-        var index = 0
+        var randomNum: UInt64 = 3074457345618258791
         
         let rgbRed:   [CGFloat] = [  0,   8,  16, 136, 180, 232, 218,   0,  0,   0, 168,  78]
         let rgbGreen: [CGFloat] = [120, 130, 124,  23,   0,  17,  59, 111, 94,  78,   0,  37]
@@ -12,10 +12,11 @@ extension UIColor {
         
         for char in hash.characters {
             let s = String(char).unicodeScalars
-            index += Int(s[s.startIndex].value)
-            index %= rgbBlue.count
+            randomNum = randomNum + UInt64(s[s.startIndex].value)
+            randomNum = randomNum &* 3074457345618258799
         }
-        
+        randomNum = randomNum % UInt64(rgbBlue.count)
+        let index: Int = Int(randomNum)
         return UIColor(red: rgbRed[index] / 255, green: rgbGreen[index] / 255, blue: rgbBlue[index] / 255, alpha: 1)
     }
 }
