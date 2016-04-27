@@ -27,6 +27,7 @@ public class InitialsView: UIView {
         self.initialsLabel.translatesAutoresizingMaskIntoConstraints = false
         self.initialsLabel.font = UIFont.msFont(MSFontStyle.XL, weight: MSFontWeight.Regular)
         self.initialsLabel.textColor = UIColor.msNeutralWhite()
+        self.initialsLabel.clipsToBounds = true
         self.addSubview(self.initialsLabel)
         self.setUpConstraints()
     }
