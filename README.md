@@ -5,15 +5,22 @@
 Fabric for iOS is a library that provides the Office UI experience for the native iOS platform. It contains tokens like [Colors](#colors) and [Typography](#typography), as well as customization for native controls like the [UIButton](#uibutton) and [UILabel](#uilabel) (with more coming soon), all from the official design language used in Office and Office 365 products.
 
 ##Install and use Office UI Fabric
-To install Office UI Fabric:
 
-1. Download the latest changes from the [Office UI Fabric iOS](https://github.com/OfficeDev/Office-UI-Fabric-iOS) repository.
+###1. Using CocoaPods
 
-2. Move the `OfficeUIFabricCore` folder into your project folder.
+```ruby
+pod 'OfficeUIFabricCore', '~> 0.1.6’
+```
 
-3. Drag and drop `OfficeUIFabricCore/OfficeUIFabricCore.xcodeproj` into your xcode project.
+###2. Manual installation
 
-4. Select in Xcode **your project** -> **your target** -> **General** -> **Embedded Binaries** -> **add "OfficeUIFabricCore.framework"**.
+2.1. Download the latest changes from the [Office UI Fabric iOS](https://github.com/OfficeDev/Office-UI-Fabric-iOS) repository.
+
+2.2. Move the `OfficeUIFabricCore` folder into your project folder.
+
+2.3. Drag and drop `OfficeUIFabricCore/OfficeUIFabricCore.xcodeproj` into your xcode project.
+
+2.4. Select in Xcode **your project** -> **your target** -> **General** -> **Embedded Binaries** -> **add "OfficeUIFabricCore.framework"**.
 
 Import the library to use it:
 
