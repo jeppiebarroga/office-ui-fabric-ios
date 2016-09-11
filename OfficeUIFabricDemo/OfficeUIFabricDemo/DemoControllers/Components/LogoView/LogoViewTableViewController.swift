@@ -17,18 +17,18 @@ class LogoViewTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.logoViewItems.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(LogoViewItemCell), forIndexPath: indexPath) as! LogoViewItemCell
-        if let (title, image) = self.logoViewItems[indexPath.row] as? (String, UIImage) {
-            cell.logoView.updateWithImage(image)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LogoViewItemCell.self), for: indexPath) as! LogoViewItemCell
+        if let (title, image) = self.logoViewItems[(indexPath as NSIndexPath).row] as? (String, UIImage) {
+            cell.logoView.updateWithImage(image: image)
             cell.titleLabel.text = title
         }
-        if let title = self.logoViewItems[indexPath.row] as? String {
-            cell.logoView.updateWithTitle(title)
+        if let title = self.logoViewItems[(indexPath as NSIndexPath).row] as? String {
+            cell.logoView.updateWithTitle(title: title)
             cell.titleLabel.text = title
         }
         return cell

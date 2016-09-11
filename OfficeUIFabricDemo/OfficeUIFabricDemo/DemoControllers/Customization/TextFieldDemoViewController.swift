@@ -17,28 +17,28 @@ class TextFieldDemoViewController: UIViewController {
         super.viewDidLoad()
         
         self.defaultBoxTextField.msTextFieldBox()
-        self.defaultBoxTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.L, weight: MSFontWeight.Regular)!)
-        self.defaultBoxTextField.msTextFieldPlaceholderText("Default Box TextField")
+        self.defaultBoxTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.L, weight: MSFontWeight.Regular)!)
+        self.defaultBoxTextField.msTextFieldPlaceholderText(text: "Default Box TextField")
         
         self.defaultUnderlineTextField.msTextFieldUnderline()
-        self.defaultUnderlineTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.L, weight: MSFontWeight.Regular)!)
-        self.defaultUnderlineTextField.msTextFieldPlaceholderText("Default Underline TextField")
+        self.defaultUnderlineTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.L, weight: MSFontWeight.Regular)!)
+        self.defaultUnderlineTextField.msTextFieldPlaceholderText(text: "Default Underline TextField")
         
-        self.customBoxTextField.msTextFieldBox(UIColor.msThemePrimary(), backgroundColor: UIColor.msThemePrimary().colorWithAlphaComponent(0.05))
-        self.customBoxTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.MPlus)!, textColor: UIColor.msThemePrimary())
-        self.customBoxTextField.msTextFieldPlaceholderText("Customized Box TextField", placeholderColor: UIColor.msThemeTertiary())
+        self.customBoxTextField.msTextFieldBox(borderColor: UIColor.msThemePrimary(), backgroundColor: UIColor.msThemePrimary().withAlphaComponent(0.05))
+        self.customBoxTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.MPlus)!, textColor: UIColor.msThemePrimary())
+        self.customBoxTextField.msTextFieldPlaceholderText(text: "Customized Box TextField", placeholderColor: UIColor.msThemeTertiary())
         
-        self.customUnderlineTextField.msTextFieldUnderline(UIColor.msThemePrimary(), backgroundColor: UIColor.msThemePrimary().colorWithAlphaComponent(0.05))
-        self.customUnderlineTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.MPlus)!, textColor: UIColor.msThemePrimary())
-        self.customUnderlineTextField.msTextFieldPlaceholderText("Customized Underline TextField", placeholderColor: UIColor.msThemeTertiary())
+        self.customUnderlineTextField.msTextFieldUnderline(borderColor: UIColor.msThemePrimary(), backgroundColor: UIColor.msThemePrimary().withAlphaComponent(0.05))
+        self.customUnderlineTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.MPlus)!, textColor: UIColor.msThemePrimary())
+        self.customUnderlineTextField.msTextFieldPlaceholderText(text: "Customized Underline TextField", placeholderColor: UIColor.msThemeTertiary())
         
         self.permPlaceholderBoxTextField.msTextFieldBox()
-        self.permPlaceholderBoxTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.MPlus))
-        self.permPlaceholderBoxTextField.msTextFieldPermanentPlaceholderText("First Name", font: self.permPlaceholderBoxTextField.font)
+        self.permPlaceholderBoxTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.MPlus))
+        self.permPlaceholderBoxTextField.msTextFieldPermanentPlaceholderText(text: "First Name", font: self.permPlaceholderBoxTextField.font)
         
         self.permPlaceholderUnderlineTextField.msTextFieldUnderline()
-        self.permPlaceholderUnderlineTextField.msTextFieldFontStyles(UIFont.msFont(MSFontStyle.MPlus))
-        self.permPlaceholderUnderlineTextField.msTextFieldPermanentPlaceholderText("Last Name", font: self.permPlaceholderBoxTextField.font)
+        self.permPlaceholderUnderlineTextField.msTextFieldFontStyles(font: UIFont.msFont(style: MSFontStyle.MPlus))
+        self.permPlaceholderUnderlineTextField.msTextFieldPermanentPlaceholderText(text: "Last Name", font: self.permPlaceholderBoxTextField.font)
     }
     
     @IBAction func hideKeyboard(sender: AnyObject) {

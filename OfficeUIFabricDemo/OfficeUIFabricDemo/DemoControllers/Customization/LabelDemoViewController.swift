@@ -17,15 +17,15 @@ class LabelDemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.largeLabel.msLabel(MSFontStyle.XL)
-        self.mediumLabel.msLabel(MSFontStyle.M)
-        self.smallLabel.msLabel(MSFontStyle.XS)
+        self.largeLabel.msLabel(style: MSFontStyle.XL)
+        self.mediumLabel.msLabel(style: MSFontStyle.M)
+        self.smallLabel.msLabel(style: MSFontStyle.XS)
         
-        self.boldLabel.msLabel(MSFontStyle.M, fontWeight: MSFontWeight.Semibold)
+        self.boldLabel.msLabel(style: MSFontStyle.M, fontWeight: MSFontWeight.Semibold)
         
-        self.colorLargeLabel.msLabel(MSFontStyle.XL, textColor: UIColor.msThemeSecondary())
-        self.colorMediumLabel.msLabel(MSFontStyle.M, textColor: UIColor.msThemeSecondary())
-        self.colorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSecondary())
+        self.colorLargeLabel.msLabel(style: MSFontStyle.XL, textColor: UIColor.msThemeSecondary())
+        self.colorMediumLabel.msLabel(style: MSFontStyle.M, textColor: UIColor.msThemeSecondary())
+        self.colorSmallLabel.msLabel(style: MSFontStyle.XS, textColor: UIColor.msThemeSecondary())
     }
     
 }

@@ -4,10 +4,10 @@ import UIKit
 
 extension String {
     internal func words() -> [String] {
-        let range = self.startIndex ..< self.endIndex
+        let range = self.startIndex..<self.endIndex
         var words = [String]()
         
-        self.enumerateSubstringsInRange(range, options: .ByWords) { (word, _, _, _) -> () in
+        self.enumerateSubstrings(in: range, options: .byWords) { (word, _, _, _) -> () in
             words.append(word!)
         }
         return words

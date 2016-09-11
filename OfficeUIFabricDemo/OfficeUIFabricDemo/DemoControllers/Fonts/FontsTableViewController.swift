@@ -19,16 +19,16 @@ class FontsTableViewController: UITableViewController {
     }
     
     private let fontItems: [FontItem] = [
-        FontItem(style: "SU",   font: UIFont.msFont(MSFontStyle.SU)!,   size: 42, weight: "Light"),
-        FontItem(style: "XXL",  font: UIFont.msFont(MSFontStyle.XXL)!,  size: 28, weight: "Light"),
-        FontItem(style: "XL",   font: UIFont.msFont(MSFontStyle.XL)!,   size: 21, weight: "Light"),
-        FontItem(style: "L",    font: UIFont.msFont(MSFontStyle.L)!,    size: 17, weight: "SemiLight"),
-        FontItem(style: "MPlus",font: UIFont.msFont(MSFontStyle.MPlus)!,size: 15, weight: "Regular"),
-        FontItem(style: "M",    font: UIFont.msFont(MSFontStyle.M)!,    size: 14, weight: "Regular"),
-        FontItem(style: "SPlus",font: UIFont.msFont(MSFontStyle.SPlus)!,size: 13, weight: "Regular"),
-        FontItem(style: "S",    font: UIFont.msFont(MSFontStyle.S)!,    size: 12, weight: "Regular"),
-        FontItem(style: "XS",   font: UIFont.msFont(MSFontStyle.XS)!,   size: 11, weight: "Regular"),
-        FontItem(style: "MI",   font: UIFont.msFont(MSFontStyle.MI)!,   size: 10, weight: "Semibold")
+        FontItem(style: "SU",   font: UIFont.msFont(style: MSFontStyle.SU)!,   size: 42, weight: "Light"),
+        FontItem(style: "XXL",  font: UIFont.msFont(style: MSFontStyle.XXL)!,  size: 28, weight: "Light"),
+        FontItem(style: "XL",   font: UIFont.msFont(style: MSFontStyle.XL)!,   size: 21, weight: "Light"),
+        FontItem(style: "L",    font: UIFont.msFont(style: MSFontStyle.L)!,    size: 17, weight: "SemiLight"),
+        FontItem(style: "MPlus",font: UIFont.msFont(style: MSFontStyle.MPlus)!,size: 15, weight: "Regular"),
+        FontItem(style: "M",    font: UIFont.msFont(style: MSFontStyle.M)!,    size: 14, weight: "Regular"),
+        FontItem(style: "SPlus",font: UIFont.msFont(style: MSFontStyle.SPlus)!,size: 13, weight: "Regular"),
+        FontItem(style: "S",    font: UIFont.msFont(style: MSFontStyle.S)!,    size: 12, weight: "Regular"),
+        FontItem(style: "XS",   font: UIFont.msFont(style: MSFontStyle.XS)!,   size: 11, weight: "Regular"),
+        FontItem(style: "MI",   font: UIFont.msFont(style: MSFontStyle.MI)!,   size: 10, weight: "Semibold")
     ]
     
     override func viewDidLoad() {
@@ -37,14 +37,14 @@ class FontsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fontItems.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FontItemCellId", forIndexPath: indexPath) as! FontItemCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FontItemCellId", for: indexPath) as! FontItemCell
         
-        let fontItem = self.fontItems[indexPath.row]
+        let fontItem = self.fontItems[(indexPath as NSIndexPath).row]
         
         cell.styleLabel.text = fontItem.style
         cell.sizeLabel.text = "\(fontItem.size)pt"
