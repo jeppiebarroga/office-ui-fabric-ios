@@ -8,7 +8,7 @@ class InitialsViewItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     func updateWithTitle(title: String) {
-        self.initialsView.setInitialsFromTitle(title)
+        self.initialsView.setInitialsFromTitle(title: title)
         self.titleLabel.text = title
     }
 }

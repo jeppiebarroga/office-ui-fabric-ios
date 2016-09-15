@@ -3,8 +3,8 @@
 import UIKit
 
 internal enum ColorsDataSourceType : Int {
-    case Palette
-    case Hash
+    case palette
+    case hash
 }
 
 class ColorsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
@@ -33,13 +33,13 @@ class ColorsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     private var colorSections: [ColorSectionItem] = []
     
-    internal init(type: ColorsDataSourceType = .Palette) {
+    internal init(type: ColorsDataSourceType = .palette) {
         super.init()
         
         switch type {
-        case .Palette:
+        case .palette:
             self.colorSections = self.colorsFromPalette()
-        case .Hash:
+        case .hash:
             self.colorSections = self.colorsWithHash()
         }
     }
@@ -100,14 +100,14 @@ class ColorsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     private func colorsWithHash() -> [ColorSectionItem] {
         return [
             ColorSectionItem(title: "Hash Generated Colors", colors: [
-                ColorItem(title: "Hash color: \"Rosalind Summers\"", color: UIColor.msHashColor("Rosalind Summers"), hex: "\"Rosalind Summers\""),
-                ColorItem(title: "Hash color: \"Karen Pruitt\"", color: UIColor.msHashColor("Karen Pruitt"), hex: "\"Karen Pruitt\""),
-                ColorItem(title: "Hash color: \"Norris Beardsley\"", color: UIColor.msHashColor("Norris Beardsley"), hex: "\"Norris Beardsley\""),
-                ColorItem(title: "Hash color: \"Nadine Terrell\"", color: UIColor.msHashColor("Nadine Terrell"), hex: "\"Nadine Terrell\""),
-                ColorItem(title: "Hash color: \"Naomi Wyatt\"", color: UIColor.msHashColor("Naomi Wyatt"), hex: "\"Naomi Wyatt\""),
-                ColorItem(title: "Hash color: \"Proseware, Inc.\"", color: UIColor.msHashColor("Proseware, Inc."), hex: "\"Proseware, Inc.\""),
-                ColorItem(title: "Hash color: \"VanArsdel, Ltd.\"", color: UIColor.msHashColor("VanArsdel, Ltd."), hex: "\"VanArsdel, Ltd.\""),
-                ColorItem(title: "Hash color: \"Wide World Importers\"", color: UIColor.msHashColor("Wide World Importers"), hex: "\"Wide World Importers\"")
+                ColorItem(title: "Hash color: \"Rosalind Summers\"", color: UIColor.msHashColor(hash: "Rosalind Summers"), hex: "\"Rosalind Summers\""),
+                ColorItem(title: "Hash color: \"Karen Pruitt\"", color: UIColor.msHashColor(hash: "Karen Pruitt"), hex: "\"Karen Pruitt\""),
+                ColorItem(title: "Hash color: \"Norris Beardsley\"", color: UIColor.msHashColor(hash: "Norris Beardsley"), hex: "\"Norris Beardsley\""),
+                ColorItem(title: "Hash color: \"Nadine Terrell\"", color: UIColor.msHashColor(hash: "Nadine Terrell"), hex: "\"Nadine Terrell\""),
+                ColorItem(title: "Hash color: \"Naomi Wyatt\"", color: UIColor.msHashColor(hash: "Naomi Wyatt"), hex: "\"Naomi Wyatt\""),
+                ColorItem(title: "Hash color: \"Proseware, Inc.\"", color: UIColor.msHashColor(hash: "Proseware, Inc."), hex: "\"Proseware, Inc.\""),
+                ColorItem(title: "Hash color: \"VanArsdel, Ltd.\"", color: UIColor.msHashColor(hash: "VanArsdel, Ltd."), hex: "\"VanArsdel, Ltd.\""),
+                ColorItem(title: "Hash color: \"Wide World Importers\"", color: UIColor.msHashColor(hash: "Wide World Importers"), hex: "\"Wide World Importers\"")
             ])
         ]
     }
@@ -117,22 +117,22 @@ class ColorsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     let ColorsSectionHeaderId = "ColorsSectionHeaderId"
     
     internal func setupTableView(tableView: UITableView) {
-        tableView.registerNib(UINib(nibName: "ColorsSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: ColorsSectionHeaderId)
+        tableView.register(UINib(nibName: "ColorsSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: ColorsSectionHeaderId)
     }
     
     // MARK: UITableViewDataSource implementation
     
-    internal func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    internal func numberOfSections(in tableView: UITableView) -> Int {
         return self.colorSections.count
     }
     
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.colorSections[section].colors.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ColorItemCellId", forIndexPath: indexPath) as! ColorItemCell
-        let colorItem = self.colorSections[indexPath.section].colors[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ColorItemCellId", for: indexPath) as! ColorItemCell
+        let colorItem = self.colorSections[(indexPath as NSIndexPath).section].colors[(indexPath as NSIndexPath).row]
         
         cell.titleLabel.text = colorItem.title
         cell.colorView.backgroundColor = colorItem.color
@@ -145,12 +145,12 @@ class ColorsDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     let ColorsSectionHeaderHeight: CGFloat = 26
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ColorsSectionHeaderHeight
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("ColorsSectionHeaderId") as! ColorsSectionHeader
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ColorsSectionHeaderId") as! ColorsSectionHeader
         header.sectionTitle.text = self.colorSections[section].title
         header.bgView.backgroundColor = self.colorSections[section].colors.first?.color
         return header

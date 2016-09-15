@@ -7,7 +7,7 @@ class DemoItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setSelectionColor(UIColor.msNeutralTertiaryAlt())
+        self.setSelectionColor(selectionColor: UIColor.msNeutralTertiaryAlt())
     }
     
     private func setSelectionColor(selectionColor: UIColor) {

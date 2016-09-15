@@ -6,32 +6,32 @@ extension UITextField {
     
     // MARK: TextField Background
     
-    public func msTextFieldBox(borderColor: UIColor = UIColor.msNeutralSecondaryAlt(), backgroundColor: UIColor = UIColor.clearColor(), leftPadding: CGFloat = MSTextFieldConstants.DefaultPadding) {
-        self.borderStyle = UITextBorderStyle.None
-        self.background = UIImage.msTextFieldBoxBackground(borderColor, fillColor: backgroundColor)
-        self.setLeftPadding(leftPadding)
+    public func msTextFieldBox(borderColor: UIColor = UIColor.msNeutralSecondaryAlt(), backgroundColor: UIColor = UIColor.clear, leftPadding: CGFloat = MSTextFieldConstants.DefaultPadding) {
+        self.borderStyle = UITextBorderStyle.none
+        self.background = UIImage.msTextFieldBoxBackground(borderColor: borderColor, fillColor: backgroundColor)
+        self.setLeftPadding(padding: leftPadding)
     }
     
-    public func msTextFieldUnderline(borderColor: UIColor = UIColor.msNeutralSecondaryAlt(), backgroundColor: UIColor = UIColor.clearColor(), leftPadding: CGFloat = MSTextFieldConstants.DefaultPadding) {
-        self.borderStyle = UITextBorderStyle.None
-        self.background = UIImage.msTextFieldUnderlineBackground(borderColor, fillColor: backgroundColor)
-        self.setLeftPadding(leftPadding)
+    public func msTextFieldUnderline(borderColor: UIColor = UIColor.msNeutralSecondaryAlt(), backgroundColor: UIColor = UIColor.clear, leftPadding: CGFloat = MSTextFieldConstants.DefaultPadding) {
+        self.borderStyle = UITextBorderStyle.none
+        self.background = UIImage.msTextFieldUnderlineBackground(borderColor: borderColor, fillColor: backgroundColor)
+        self.setLeftPadding(padding: leftPadding)
     }
     
     private func setLeftPadding(padding: CGFloat) {
-        let paddingView = UIView(frame: CGRectMake(0, 0, padding, 0))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: 0))
         self.leftView = paddingView
-        self.leftViewMode = UITextFieldViewMode.Always
+        self.leftViewMode = UITextFieldViewMode.always
     }
     
     // MARK: TextField Font Style
     
     public func msTextFieldFontStyles(style: MSFontStyle = MSFontStyle.L, textColor: UIColor = UIColor.msNeutralPrimary()) {
-        self.msTextFieldFontStyles(style, fontWeight: MSFontConstants.msPreferredFontWeight(style), textColor: textColor)
+        self.msTextFieldFontStyles(style: style, fontWeight: MSFontConstants.msPreferredFontWeight(style: style), textColor: textColor)
     }
     
     public func msTextFieldFontStyles(style: MSFontStyle = MSFontStyle.L, fontWeight: MSFontWeight, textColor: UIColor = UIColor.msNeutralPrimary()) {
-        self.msTextFieldFontStyles(UIFont.msFont(style, weight: fontWeight), textColor: textColor)
+        self.msTextFieldFontStyles(font: UIFont.msFont(style: style, weight: fontWeight), textColor: textColor)
     }
     
     public func msTextFieldFontStyles(font: UIFont?, textColor: UIColor = UIColor.msNeutralPrimary()) {
@@ -64,12 +64,12 @@ extension UITextField {
         placeholderLabel.textColor = placeholderColor
         placeholderLabel.text = text
         placeholderLabel.sizeToFit()
-        placeholderLabel.textAlignment = .Center
+        placeholderLabel.textAlignment = .center
         placeholderLabel.frame = CGRect(
             origin: placeholderLabel.frame.origin,
-            size: CGSizeMake(placeholderLabel.frame.width + padding, self.frame.size.height)
+            size: CGSize(width: placeholderLabel.frame.width + padding, height: self.frame.size.height)
         )
         self.leftView = placeholderLabel
-        self.leftViewMode = UITextFieldViewMode.Always
+        self.leftViewMode = UITextFieldViewMode.always
     }
 }

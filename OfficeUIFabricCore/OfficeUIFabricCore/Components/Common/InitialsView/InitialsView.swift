@@ -2,13 +2,13 @@
 
 import UIKit
 
-public class InitialsView: UIView {
-    private(set) public var initialsLabel: UILabel = UILabel()
+open class InitialsView: UIView {
+    private(set) open var initialsLabel: UILabel = UILabel()
     
     // MARK: Initialization
     
     public convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
     }
     
     override public init(frame: CGRect) {
@@ -23,9 +23,9 @@ public class InitialsView: UIView {
     
     private func setUpInitialsLabel() {
         self.initialsLabel.frame = self.bounds
-        self.initialsLabel.textAlignment = .Center
+        self.initialsLabel.textAlignment = .center
         self.initialsLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.initialsLabel.font = UIFont.msFont(MSFontStyle.XL, weight: MSFontWeight.Regular)
+        self.initialsLabel.font = UIFont.msFont(style: MSFontStyle.XL, weight: MSFontWeight.Regular)
         self.initialsLabel.textColor = UIColor.msNeutralWhite()
         self.initialsLabel.clipsToBounds = true
         self.addSubview(self.initialsLabel)
@@ -35,17 +35,17 @@ public class InitialsView: UIView {
     private func setUpConstraints() {
         let views = ["label": self.initialsLabel]
         
-        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[label]-0-|", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: NSLayoutFormatOptions.alignAllCenterX, metrics: nil, views: views)
         self.addConstraints(horizontalConstraints)
         
-        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[label]-0-|", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: views)
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[label]-0-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: views)
         self.addConstraints(verticalConstraints)
     }
     
     // MARK: Usage
     
-    public func setInitialsFromTitle(title: String) {
-        self.initialsLabel.text = title.initials().uppercaseString
-        self.backgroundColor = UIColor.msHashColor(title)
+    open func setInitialsFromTitle(title: String) {
+        self.initialsLabel.text = title.initials().uppercased()
+        self.backgroundColor = UIColor.msHashColor(hash: title)
     }
 }

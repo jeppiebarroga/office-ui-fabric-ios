@@ -4,13 +4,13 @@ import UIKit
 
 extension UIFont {
     public class func msFont(style: MSFontStyle) -> UIFont? {
-        return msFont(style, weight: MSFontConstants.msPreferredFontWeight(style))
+        return msFont(style: style, weight: MSFontConstants.msPreferredFontWeight(style: style))
     }
     
     public class func msFont(style: MSFontStyle, weight: MSFontWeight) -> UIFont? {
         if #available(iOS 8.2, *) {
-            return self.systemFontOfSize(MSFontConstants.msFontSize(style), weight: MSFontConstants.fontWeight(weight))
+            return self.systemFont(ofSize: MSFontConstants.msFontSize(style: style), weight: MSFontConstants.fontWeight(msFontWeight: weight))
         }
-        return self.systemFontOfSize(MSFontConstants.msFontSize(style))
+        return self.systemFont(ofSize: MSFontConstants.msFontSize(style: style))
     }
 }

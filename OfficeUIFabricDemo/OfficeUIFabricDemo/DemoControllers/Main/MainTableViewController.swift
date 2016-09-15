@@ -53,53 +53,52 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let tableView = self.view as! UITableView
-        tableView.registerNib(UINib(nibName: "DemoSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "DemoSectionHeaderId")
+        tableView.register(UINib(nibName: "DemoSectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "DemoSectionHeaderId")
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.demoSections.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.demoSections[section].demos.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DemoItemCellId", forIndexPath: indexPath) as! DemoItemCell
-        if let demoItem: DemoLinkItem = self.demoSections[indexPath.section].demos[indexPath.row] {
-            cell.itemTitle.text = demoItem.title
-        }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoItemCellId", for: indexPath) as! DemoItemCell
+        let demoItem = self.demoSections[(indexPath as NSIndexPath).section].demos[(indexPath as NSIndexPath).row]
+        cell.itemTitle.text = demoItem.title
         return cell
     }
     
     // MARK: Header
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return DemoSectionHeaderHeight
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("DemoSectionHeaderId") as! DemoSectionHeader
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "DemoSectionHeaderId") as! DemoSectionHeader
         header.sectionTitle.text = self.demoSections[section].title
         return header
     }
     
     // MARK: Actions
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let segueId = self.demoSections[indexPath.section].demos[indexPath.row].segueId {
-            self.performSegueWithIdentifier(segueId, sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let segueId = self.demoSections[(indexPath as NSIndexPath).section].demos[(indexPath as NSIndexPath).row].segueId {
+            self.performSegue(withIdentifier: segueId, sender: self)
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MainTableViewController.ShowColorsPaletteSegueId {
-            let controller = segue.destinationViewController as! ColorPaletteTableViewController
-            if let type = ColorsDataSourceType(rawValue: tableView.indexPathForSelectedRow!.row) {
+            let controller = segue.destination as! ColorPaletteTableViewController
+            if let type = ColorsDataSourceType(rawValue: (tableView.indexPathForSelectedRow! as NSIndexPath).row) {
                 controller.colorsType = type
             }
         }

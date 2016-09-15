@@ -21,13 +21,13 @@ class InitialsViewTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.initials.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(InitialsViewItemCell), forIndexPath: indexPath) as! InitialsViewItemCell
-        cell.updateWithTitle(self.initials[indexPath.row])
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InitialsViewItemCell.self), for: indexPath) as! InitialsViewItemCell
+        cell.updateWithTitle(title: self.initials[(indexPath as NSIndexPath).row])
         return cell
     }
 }

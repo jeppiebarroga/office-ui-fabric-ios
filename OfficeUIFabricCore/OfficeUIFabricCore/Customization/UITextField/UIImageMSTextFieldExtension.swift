@@ -3,12 +3,12 @@
 import UIKit
 
 extension UIImage {
-    class func msTextFieldBoxBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.mainScreen().scale) -> UIImage {
+    class func msTextFieldBoxBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.main.scale) -> UIImage {
         
         let innerImageInsets: CGFloat = 1
         let strokeWidth: CGFloat = 1
         let size = 5 * scale
-        let bounds = CGRect(origin: CGPointZero, size: CGSize(width: size, height: size))
+        let bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: size, height: size))
         
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
         
@@ -25,22 +25,22 @@ extension UIImage {
         
         UIGraphicsEndImageContext()
         
-        return UIImage(CGImage: bgImage.CGImage!, scale: scale, orientation: UIImageOrientation.Up)
-            .resizableImageWithCapInsets(
-                UIEdgeInsetsMake(
+        return UIImage(cgImage: bgImage!.cgImage!, scale: scale, orientation: UIImageOrientation.up)
+            .resizableImage(
+                withCapInsets: UIEdgeInsetsMake(
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth
-                ), resizingMode: UIImageResizingMode.Stretch)
+                ), resizingMode: UIImageResizingMode.stretch)
     }
     
-    class func msTextFieldUnderlineBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.mainScreen().scale) -> UIImage {
+    class func msTextFieldUnderlineBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.main.scale) -> UIImage {
         
         let innerImageInsets: CGFloat = 1
         let strokeWidth: CGFloat = 1
         let size = 5 * scale
-        let bounds = CGRect(origin: CGPointZero, size: CGSize(width: size, height: size))
+        let bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: size, height: size))
         
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
         
@@ -51,22 +51,22 @@ extension UIImage {
         
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextMoveToPoint(context, 0, bounds.height - strokeWidth)
-        CGContextAddLineToPoint(context, bounds.width, bounds.height - strokeWidth)
+        context?.move(to: CGPoint(x: 0, y: bounds.height - strokeWidth))
+        context?.addLine(to: CGPoint(x: bounds.width, y: bounds.height - strokeWidth))
         
-        CGContextStrokePath(context)
+        context?.strokePath()
         
         let bgImage = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext()
         
-        return UIImage(CGImage: bgImage.CGImage!, scale: scale, orientation: UIImageOrientation.Up)
-            .resizableImageWithCapInsets(
-                UIEdgeInsetsMake(
+        return UIImage(cgImage: bgImage!.cgImage!, scale: scale, orientation: UIImageOrientation.up)
+            .resizableImage(
+                withCapInsets: UIEdgeInsetsMake(
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth,
                     innerImageInsets + strokeWidth
-                ), resizingMode: UIImageResizingMode.Stretch)
+                ), resizingMode: UIImageResizingMode.stretch)
     }
 }

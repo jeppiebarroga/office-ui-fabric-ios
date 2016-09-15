@@ -3,12 +3,12 @@
 import UIKit
 
 extension UIImage {
-    class func msButtonBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.mainScreen().scale) -> UIImage {
+    class func msButtonBackground(borderColor: UIColor, fillColor: UIColor, scale: CGFloat = UIScreen.main.scale) -> UIImage {
         
         let strokeWidth: CGFloat = 1
         let cornerRadius: CGFloat = 4
         let size = 11 * scale
-        let bounds = CGRect(origin: CGPointZero, size: CGSize(width: size, height: size))
+        let bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: size, height: size))
         
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
         
@@ -18,7 +18,7 @@ extension UIImage {
         let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         
         // Clip corners from dirty pixels
-        let roundCornerClip = UIBezierPath.bezierPathByReversingPath(roundedRect)()
+        let roundCornerClip = UIBezierPath.reversing(roundedRect)()
         roundCornerClip.addClip()
         
         roundedRect.lineWidth = strokeWidth
@@ -29,13 +29,13 @@ extension UIImage {
         
         UIGraphicsEndImageContext()
         
-        return UIImage(CGImage: bgImage.CGImage!, scale: scale, orientation: UIImageOrientation.Up)
-            .resizableImageWithCapInsets(
-                UIEdgeInsetsMake(
+        return UIImage(cgImage: bgImage!.cgImage!, scale: scale, orientation: UIImageOrientation.up)
+            .resizableImage(
+                withCapInsets: UIEdgeInsetsMake(
                     cornerRadius + strokeWidth,
                     cornerRadius + strokeWidth,
                     cornerRadius + strokeWidth,
                     cornerRadius + strokeWidth
-                ), resizingMode: UIImageResizingMode.Stretch)
+                ), resizingMode: UIImageResizingMode.stretch)
     }
 }

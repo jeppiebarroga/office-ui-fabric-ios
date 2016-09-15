@@ -4,12 +4,12 @@ import UIKit
 
 extension UILabel {
     public func msLabel(style: MSFontStyle = MSFontStyle.L, textColor: UIColor = UIColor.msNeutralPrimary()) {
-        self.font = UIFont.msFont(style, weight: MSFontConstants.msPreferredFontWeight(style))
+        self.font = UIFont.msFont(style: style, weight: MSFontConstants.msPreferredFontWeight(style: style))
         self.textColor = textColor
     }
     
     public func msLabel(style: MSFontStyle = MSFontStyle.L, fontWeight: MSFontWeight, textColor: UIColor = UIColor.msNeutralPrimary()) {
-        self.font = UIFont.msFont(style, weight: fontWeight)
+        self.font = UIFont.msFont(style: style, weight: fontWeight)
         self.textColor = textColor
     }
 }
