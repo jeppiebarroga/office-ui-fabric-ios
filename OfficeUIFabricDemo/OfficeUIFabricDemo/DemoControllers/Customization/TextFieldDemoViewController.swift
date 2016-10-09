@@ -41,7 +41,7 @@ class TextFieldDemoViewController: UIViewController {
         self.permPlaceholderUnderlineTextField.msTextFieldPermanentPlaceholderText(text: "Last Name", font: self.permPlaceholderBoxTextField.font)
     }
     
-    @IBAction func hideKeyboard(sender: AnyObject) {
+    @IBAction func hideKeyboard(_ sender: AnyObject) {
         self.defaultBoxTextField.resignFirstResponder()
         self.defaultUnderlineTextField.resignFirstResponder()
         self.customBoxTextField.resignFirstResponder()
