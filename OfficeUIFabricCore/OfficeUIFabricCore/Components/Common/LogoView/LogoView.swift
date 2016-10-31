@@ -27,16 +27,13 @@ open class LogoView: UIView {
     }
     
     private func setupSubview(subview: UIView) {
-        subview.frame = self.bounds
         self.addSubview(subview)
-        
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[subview]-0-|", options: NSLayoutFormatOptions.alignAllCenterX, metrics: nil, views: ["subview": subview])
-        self.addConstraints(horizontalConstraints)
-        
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[subview]-0-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: ["subview": subview])
-        self.addConstraints(verticalConstraints)
-        
         subview.isHidden = true
+    }
+    
+    open override func layoutSubviews() {
+        self.imageView.frame = self.bounds
+        self.initialsView.frame = self.bounds
     }
     
     // MARK: Usage
