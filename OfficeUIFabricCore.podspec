@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "OfficeUIFabricCore"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "The iOS UI framework for building experiences for Office and Office 365"
   s.description  = <<-DESC
                      Fabric for iOS is a library that provides the Office UI experience for the native iOS platform. It contains tokens like Colors and Typography, as well as customization for native controls. All from the official design language used in Office and Office 365 products.
