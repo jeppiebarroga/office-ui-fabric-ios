@@ -1,18 +1,18 @@
-#[Office UI Fabric iOS Core](http://dev.office.com/fabric)
+# [Office UI Fabric iOS Core](http://dev.office.com/fabric)
 
-#####The iOS UI framework for building experiences for Office and Office 365.
+##### The iOS UI framework for building experiences for Office and Office 365.
 
 Fabric for iOS is a library that provides the Office UI experience for the native iOS platform. It contains tokens like [Colors](#colors) and [Typography](#typography), as well as customization for native controls like the [UIButton](#uibutton) and [UILabel](#uilabel) (with more coming soon), all from the official design language used in Office and Office 365 products.
 
-##Install and use Office UI Fabric
+## Install and use Office UI Fabric
 
-###1. Using CocoaPods
+### 1. Using CocoaPods
 
 ```ruby
 pod 'OfficeUIFabricCore', '~> 0.1.6’
 ```
 
-###2. Manual installation
+### 2. Manual installation
 
 2.1. Download the latest changes from the [Office UI Fabric iOS](https://github.com/OfficeDev/Office-UI-Fabric-iOS) repository.
 
@@ -28,9 +28,9 @@ Import the library to use it:
 import OfficeUIFabricCore
 ```
 
-##Tokens
+## Tokens
 
-###Colors
+### Colors
 
 You can use the `UIColor` extension to access colors from the Office color palette:
 
@@ -51,7 +51,7 @@ UIColor.msHashColor("Norris Beardsley")
 UIColor.msHashColor("Proseware, Inc.")
 ```
 
-###Typography
+### Typography
 
 Fabric uses several font styles. You can see the full list on the [Typography styles](http://dev.office.com/fabric/styles#typography) page of the Fabric website.
 
@@ -74,7 +74,7 @@ UIFont.msFont(style: MSFontStyle.L, weight: MSFontWeight.Thin)
 ```
 >Note: The font weight works only for iOS 8.2 and later. For earlier versions of iOS, the font will be regular weight.
 
-###Icons
+### Icons
 
 To be consistent with other design tokens, you can use recommended icon sizes with specific line weights:
 
@@ -86,9 +86,9 @@ NavigationBar Icons: 20x20pt, line weight: 1
 
 In general, we recommend that you use outline icons rather than solid icons. Use solid icons for different icon states (such as following/not following).
 
-##Native control customization
+## Native control customization
 
-###UIButton
+### UIButton
 
 You can use the `UIButtonMS` extension to customize your UI buttons:
 
@@ -116,7 +116,7 @@ self.toggleIconButton.setImage(UIImage(named: "MyToggleImage"), forState: .Norma
 self.toggleIconButton.setImage(UIImage(named: "MyToggleImageSelected"), forState: .Selected)
 ```
 
-###UILabel
+### UILabel
 
 You can use the `UILabelMS` extension to customize your UI labels:
 
@@ -134,7 +134,7 @@ self.myColorSmallLabel.msLabel(MSFontStyle.XS, textColor: UIColor.msThemeSeconda
 
 ![Image showing large, medium, and small UI labels in several colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LabelExample.png)
 
-###UITextField
+### UITextField
 
 You can use `UITextFieldMSExtension` to customize `UITextField`s in your project.
 
@@ -146,7 +146,7 @@ You can use `UITextFieldMSExtension` to customize `UITextField`s in your project
 * Text Style
 * Placeholder Text Style
 
-####1. Define the form:
+#### 1. Define the form:
 
 You can use `Box` or `Underline` style for your text field:
 ```swift
@@ -161,7 +161,7 @@ self.myTextField.msTextFieldUnderline()
 self.myTextField.msTextFieldUnderline(borderColor: UIColor, backgroundColor: UIColor, leftPadding: CGFloat)
 ```
 
-####2. Text Style:
+#### 2. Text Style:
 
 To apply text style to your `UITextField`:
 
@@ -175,7 +175,7 @@ self.myTextField.msTextFieldFontStyles(style: MSFontStyle, fontWeight: MSFontWei
 self.myTextField.msTextFieldFontStyles(font: UIFont?, textColor: UIColor)
 ```
 
-####3. Placeholder Text Style:
+#### 3. Placeholder Text Style:
 
 You can use either "Placeholder text" in your `UITextField` or permanent "placeholder":
 
@@ -191,9 +191,9 @@ self.myTextField.msTextFieldPermanentPlaceholderText(text: String)
 self.myTextField.msTextFieldPermanentPlaceholderText(text: String, placeholderColor: UIColor, font: UIFont?, padding: CGFloat)
 ```
 
-##Components
+## Components
 
-###InitialsView
+### InitialsView
 
 Use the InitialsView component to create a colored box with initials from a string:
 
@@ -205,7 +205,7 @@ Use `UIColor.msHashColor(title)` to set the background color.
 
 ![Image that shows two InitialsView components with initials from the string in different colors](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/InitialsViewExample.png)
 
-###LogoView
+### LogoView
 
 Use the LogoView component to create a colored box with initials or an image. This component contains `InitialsView`, `UIImageView`, and logic to show both of them based on input. Use this component when you have a list of items that don't all have images such as an address book.
 
@@ -223,17 +223,17 @@ self.logoView.updateWithImage(image)
 ![Image that shows a LogoView component with an InitialsView and a UIImageView](https://raw.githubusercontent.com/OfficeDev/Office-UI-Fabric-iOS/master/DocsAssets/LogoViewExample.png)
 
 
-##Contribute to Fabric
+## Contribute to Fabric
 
 Post bug reports, feature requests, and questions on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-iOS/issues).
 
 
-##Licenses
+## Licenses
 
 All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project.
 
 
-##Changelog
+## Changelog
 We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, including the changelog between every release. You'll find a complete list of additions, fixes, and changes since the 1.0 release on the [Releases page](https://github.com/OfficeDev/Office-UI-Fabric-iOS/releases).
 
 - - -
