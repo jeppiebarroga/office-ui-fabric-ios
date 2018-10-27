@@ -222,7 +222,7 @@
 				TargetAttributes = {
 					A6371F871C6272560086CB29 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -386,7 +386,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.officeui-fabric.OfficeUIFabricCore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -405,7 +406,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.officeui-fabric.OfficeUIFabricCore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
